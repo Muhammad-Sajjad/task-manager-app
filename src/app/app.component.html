@@ -1,13 +1,15 @@
 <nb-layout>
 
   <nb-layout-header fixed>
-  <!-- Insert header here -->
+  Navbar Content
   </nb-layout-header>
 
   <nb-sidebar>Sidebar Content</nb-sidebar>
 
   <nb-layout-column>    
-    <router-outlet></router-outlet>
+    <router-outlet>
+      <app-task-cards-section></app-task-cards-section>
+    </router-outlet>
   </nb-layout-column>
 
 </nb-layout>
