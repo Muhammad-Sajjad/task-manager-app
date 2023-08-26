@@ -12,16 +12,23 @@ export class TodoistService {
   }
 
   getTasks(): Promise<Task[]> {
-    return this.api
-      .getTasks();
+    return this.api.getTasks();
   }
 
   addTask(task: AddTaskArgs): Promise<Task> {
-    return this.api
-      .addTask(task);
+    return this.api.addTask(task);
   }
 
-  deleteTask(taskId: string) {
+  updateTask(id: string, task: TaskInternal): Promise<Task> {
+    return this.api.updateTask(id, task);
+  }
+
+  deleteTask(taskId: string): Promise<boolean> {
     return this.api.deleteTask(taskId);
   }
+}
+
+export interface TaskInternal {
+  content: string;
+  description?: string;
 }
