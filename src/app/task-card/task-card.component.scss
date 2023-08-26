@@ -8,13 +8,21 @@
   }
 }
 
-.title-area, .description-area {
-    border: none;
-    width: 100%;
+.title-area,
+.description-area {
+  border: none;
+  width: 100%;
 }
 
 .title-area {
-    overflow: visible;
+  font-weight: 600;
+  overflow: visible;
+  overflow-block: clip;
+  height: auto;
+}
+
+.margin-top-sm {
+  margin-top: 8px;
 }
 
 .margin-left-sm {
