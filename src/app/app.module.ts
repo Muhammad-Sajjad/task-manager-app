@@ -11,6 +11,7 @@ import {
   NbCardModule,
   NbIconModule,
   NbButtonModule,
+  NbInputModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TaskCardsSectionComponent } from './task-cards-section/task-cards-section.component';
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbIconModule,
     FormsModule,
     NbButtonModule,
+    NbInputModule,
     HttpClientModule,
   ],
   providers: [],
