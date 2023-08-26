@@ -12,4 +12,8 @@ export class DashboardComponent {
   viewTasks(status: 'open' | 'closed') {
     this.router.navigateByUrl(`/dashboard?status=${status}`);
   }
+
+  ngOnInit() {
+    this.viewTasks('open');
+  }
 }
