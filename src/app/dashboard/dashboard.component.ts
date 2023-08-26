@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  @Output() id!: boolean;
-
   constructor(private router: Router) {}
 
   viewTasks(status: 'open' | 'closed') {

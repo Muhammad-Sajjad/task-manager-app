@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AddTaskArgs, Task, TodoistApi } from '@doist/todoist-api-typescript';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { AddTaskArgs, Task, TodoistApi } from '@doist/todoist-api-typescript';
 export class TodoistService {
   private api: TodoistApi;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.api = new TodoistApi('6a5a5d31a5a54e59e69884515eb89bc34603e0a8');
   }
 
@@ -29,6 +30,15 @@ export class TodoistService {
 
   closeTask(taskId: string): Promise<boolean> {
     return this.api.closeTask(taskId);
+  }
+
+  getCompletedTasks(): Promise<any> {
+    const url = 'https://api.todoist.com/sync/v9/completed/get_all';
+    const headers = {
+      Authorization: `Bearer 6a5a5d31a5a54e59e69884515eb89bc34603e0a8`,
+    };
+
+    return this.http.get(url, { headers }).toPromise();
   }
 }
 

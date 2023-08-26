@@ -17,6 +17,7 @@ import { TaskCardsSectionComponent } from './task-cards-section/task-cards-secti
 import { TaskCardComponent } from './task-card/task-card.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NbIconModule,
     FormsModule,
     NbButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
