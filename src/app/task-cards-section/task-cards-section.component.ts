@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoistService } from '../todoist.service';
+import { Task } from '@doist/todoist-api-typescript';
 
 @Component({
   selector: 'app-task-cards-section',
@@ -11,15 +12,14 @@ export class TaskCardsSectionComponent implements OnInit {
 
   constructor(private todoistService: TodoistService) {}
 
+  async onTaskDeleted() {
+    this.tasks = await this.todoistService.getTasks();
+  }  
+
   ngOnInit() {
     this.todoistService.getTasks()
     .then((task: Task[]) => {
       this.tasks = task;
     });
   }
-}
-
-export interface Task {
-  content: string;
-  description: string;
 }
