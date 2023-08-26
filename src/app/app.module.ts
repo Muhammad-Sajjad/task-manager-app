@@ -13,6 +13,7 @@ import {
   NbButtonModule,
   NbInputModule,
   NbWindowModule,
+  NbToastrModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TaskCardsSectionComponent } from './task-cards-section/task-cards-section.component';
@@ -42,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbButtonModule,
     NbInputModule,
     NbWindowModule.forRoot(),
+    NbToastrModule.forRoot(),
     HttpClientModule,
   ],
   providers: [],
