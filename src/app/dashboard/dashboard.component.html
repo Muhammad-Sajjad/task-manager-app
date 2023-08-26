@@ -1,0 +1,14 @@
+<nb-layout>
+  <nb-layout-header fixed
+    ><nb-icon icon="grid"></nb-icon> Task Manager
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <button nbButton (click)="viewTasks('open')">Open Tasks</button>
+    <button nbButton (click)="viewTasks('closed')">Closed Tasks</button>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <app-task-cards-section></app-task-cards-section>
+  </nb-layout-column>
+</nb-layout>

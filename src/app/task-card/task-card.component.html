@@ -13,13 +13,23 @@
         required
       />
       <div class="action-items">
-        <button type="submit">
+        <button nbButton type="submit">
           <nb-icon icon="edit"></nb-icon>
         </button>
-        <button type="button" class="margin-left-sm" (click)="deleteTask(id)">
+        <button
+          nbButton
+          type="button"
+          class="margin-left-sm"
+          (click)="deleteTask(id)"
+        >
           <nb-icon icon="trash"></nb-icon>
         </button>
-        <button type="button" class="margin-left-sm" (click)="closeTask(id)">
+        <button
+          nbButton
+          type="button"
+          class="margin-left-sm"
+          (click)="closeTask(id)"
+        >
           <nb-icon icon="checkmark"></nb-icon>
         </button>
       </div>
@@ -28,7 +38,7 @@
       <textarea
         name="description"
         placeholder="Description"
-        class="description-area margin-top-sm"
+        class="description-area margin-top-md"
         [defaultValue]="description"
         [(ngModel)]="description"
       ></textarea>

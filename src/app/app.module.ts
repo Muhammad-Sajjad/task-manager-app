@@ -10,14 +10,21 @@ import {
   NbSidebarModule,
   NbCardModule,
   NbIconModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TaskCardsSectionComponent } from './task-cards-section/task-cards-section.component';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskCardsSectionComponent, TaskCardComponent],
+  declarations: [
+    AppComponent,
+    TaskCardsSectionComponent,
+    TaskCardComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     NbCardModule,
     NbIconModule,
     FormsModule,
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
