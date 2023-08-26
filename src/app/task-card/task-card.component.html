@@ -1,4 +1,4 @@
-<nb-card [accent]="isComplete ? 'info' : 'warning'">
+<nb-card [accent]="isComplete === false ? 'warning' : 'info'">
   <form (ngSubmit)="editTask(id, f)" #f="ngForm">
     <nb-card-header class="card-header">
       <input
@@ -12,7 +12,7 @@
         maxlength="200"
         required
       />
-      <div class="action-items">
+      <div class="action-items" *ngIf="isComplete === false">
         <button nbButton type="submit">
           <nb-icon icon="edit"></nb-icon>
         </button>
