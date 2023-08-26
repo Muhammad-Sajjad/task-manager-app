@@ -8,7 +8,12 @@ export class TodoistService {
   private api: TodoistApi;
 
   constructor() {
-    this.api = new TodoistApi('0123456789abcdef0123456789');
+    this.api = new TodoistApi('6a5a5d31a5a54e59e69884515eb89bc34603e0a8');
+  }
+
+  getTasks(): any {
+    return this.api
+      .getTasks();
   }
 
   addTask(task: any) {
