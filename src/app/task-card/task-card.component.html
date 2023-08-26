@@ -1,5 +1,5 @@
 <nb-card [accent]="isComplete ? 'info' : 'warning'">
-  <form (ngSubmit)="updateTask(id, f)" #f="ngForm">
+  <form (ngSubmit)="editTask(id, f)" #f="ngForm">
     <nb-card-header class="card-header">
       <input
         name="title"
@@ -16,8 +16,11 @@
         <button type="submit">
           <nb-icon icon="edit"></nb-icon>
         </button>
-        <button class="margin-left-sm" (click)="deleteTask(id)">
+        <button type="button" class="margin-left-sm" (click)="deleteTask(id)">
           <nb-icon icon="trash"></nb-icon>
+        </button>
+        <button type="button" class="margin-left-sm" (click)="closeTask(id)">
+          <nb-icon icon="checkmark"></nb-icon>
         </button>
       </div>
     </nb-card-header>

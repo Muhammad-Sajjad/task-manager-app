@@ -19,7 +19,7 @@ export class TodoistService {
     return this.api.addTask(task);
   }
 
-  updateTask(id: string, task: TaskInternal): Promise<Task> {
+  editTask(id: string, task: TaskInternal): Promise<Task> {
     return this.api.updateTask(id, task);
   }
 

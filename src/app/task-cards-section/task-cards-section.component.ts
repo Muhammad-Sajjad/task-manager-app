@@ -12,15 +12,7 @@ export class TaskCardsSectionComponent implements OnInit {
 
   constructor(private todoistService: TodoistService) {}
 
-  async onTaskDeleted() {
-    this.tasks = await this.todoistService.getTasks();
-  }
-
   async onTaskUpdated() {
-    this.tasks = await this.todoistService.getTasks();
-  }
-
-  async onTaskClosed() {
     this.tasks = await this.todoistService.getTasks();
   }
 

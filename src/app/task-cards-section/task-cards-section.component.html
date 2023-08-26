@@ -1,7 +1,7 @@
 <section>
   <app-task-card
     *ngFor="let task of tasks"
-    (taskDeleted)="onTaskDeleted()"
+    (taskUpdated)="onTaskUpdated()"
     [id]="task.id"
     [title]="task.content"
     [description]="task.description"

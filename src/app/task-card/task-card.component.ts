@@ -12,14 +12,13 @@ export class TaskCardComponent {
   @Input() title!: string;
   @Input() description!: string;
   @Input() isComplete!: boolean;
-  @Output() taskDeleted = new EventEmitter<void>();
   @Output() taskUpdated = new EventEmitter<void>();
 
   constructor(private todoistService: TodoistService) {}
 
   deleteTask(id: string) {
     this.todoistService.deleteTask(id).then(() => {
-      this.taskDeleted.emit();
+      this.taskUpdated.emit();
     });
   }
 
@@ -29,8 +28,8 @@ export class TaskCardComponent {
     });
   }
 
-  updateTask(id: string, form: NgForm) {
-    this.todoistService.updateTask(id, form.value).then(() => {
+  editTask(id: string, form: NgForm) {
+    this.todoistService.editTask(id, form.value).then(() => {
       this.taskUpdated.emit();
     });
   }
