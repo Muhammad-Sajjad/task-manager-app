@@ -1,8 +1,7 @@
 <section>
-  <div *ngFor="let task of tasks">
-    <app-task-card
-      [title]="task.content"
-      [description]="task.description"
-    ></app-task-card>
-  </div>
+  <app-task-card
+    *ngFor="let task of tasks"
+    [title]="task.content"
+    [description]="task.description"
+  ></app-task-card>
 </section>

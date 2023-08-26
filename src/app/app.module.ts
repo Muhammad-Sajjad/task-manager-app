@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbCardModule, NbIconModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbCardModule,
+  NbIconModule,
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TaskCardsSectionComponent } from './task-cards-section/task-cards-section.component';
 import { TaskCardComponent } from './task-card/task-card.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TaskCardsSectionComponent,
-    TaskCardComponent
-  ],
+  declarations: [AppComponent, TaskCardsSectionComponent, TaskCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,9 +26,9 @@ import { TaskCardComponent } from './task-card/task-card.component';
     NbEvaIconsModule,
     NbSidebarModule.forRoot(),
     NbCardModule,
-    NbIconModule
+    NbIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

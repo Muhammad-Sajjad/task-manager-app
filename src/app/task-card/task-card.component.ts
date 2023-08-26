@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./task-card.component.scss'],
 })
 export class TaskCardComponent {
+  @Input() id!: string;
   @Input() title!: string;
   @Input() description!: string ;
 }

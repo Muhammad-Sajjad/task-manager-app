@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TodoistApi } from '@doist/todoist-api-typescript';
+import { AddTaskArgs, Task, TodoistApi } from '@doist/todoist-api-typescript';
 
 @Injectable({
   providedIn: 'root',
@@ -11,15 +11,17 @@ export class TodoistService {
     this.api = new TodoistApi('6a5a5d31a5a54e59e69884515eb89bc34603e0a8');
   }
 
-  getTasks(): any {
+  getTasks(): Promise<Task[]> {
     return this.api
       .getTasks();
   }
 
-  addTask(task: any) {
+  addTask(task: AddTaskArgs): Promise<Task> {
     return this.api
-      .addTask(task)
-      .then((response) => response)
-      .catch((error) => error);
+      .addTask(task);
+  }
+
+  deleteTask(taskId: string) {
+    return this.api.deleteTask(taskId);
   }
 }
