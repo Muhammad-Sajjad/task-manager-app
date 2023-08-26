@@ -1,0 +1,22 @@
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .action-items {
+    width: 100px;
+  }
+}
+
+.title-area, .description-area {
+    border: none;
+    width: 100%;
+}
+
+.title-area {
+    overflow: visible;
+}
+
+.margin-left-sm {
+  margin-left: 8px;
+}

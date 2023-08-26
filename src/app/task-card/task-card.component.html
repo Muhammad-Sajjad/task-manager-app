@@ -1,11 +1,16 @@
-<nb-card accent="info">
-  <nb-card-header
-    >{{ title }}
-    <button (click)="deleteTask(id)">
+<nb-card [accent]="isComplete ? 'info' : 'danger'">
+  <nb-card-header class="card-header">
+    <input type="text" nbInput fullWidth fieldSize="small" placeholder="Input" [defaultValue]="title" class="title-area"/>
+    <div class="action-items">
+      <button>
+        <nb-icon icon="edit"></nb-icon>
+      </button>
+      <button class="margin-left-sm" (click)="deleteTask(id)">
         <nb-icon icon="trash"></nb-icon>
-    </button>
-    </nb-card-header>
-  <nb-card-body contenteditable>
-    {{ description }}
-  </nb-card-body>
+      </button>
+    </div>
+  </nb-card-header>
+  <nb-card-body fullWidth>
+  <textarea nbInput fullWidth placeholder="Textarea" class="description-area">{{description}}</textarea>
+</nb-card-body>
 </nb-card>

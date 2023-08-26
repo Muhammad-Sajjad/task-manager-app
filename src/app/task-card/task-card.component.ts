@@ -11,6 +11,7 @@ export class TaskCardComponent {
   @Input() id!: string;
   @Input() title!: string;
   @Input() description!: string;
+  @Input() isComplete!: boolean;
   @Output() taskDeleted = new EventEmitter<void>();
   
   constructor(private todoistService: TodoistService) {}
