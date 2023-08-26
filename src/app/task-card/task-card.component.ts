@@ -8,13 +8,20 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./task-card.component.scss'],
 })
 export class TaskCardComponent {
+  @Input() isNewTask: true | undefined;
   @Input() id!: string;
-  @Input() title!: string;
+  @Input() content!: string;
   @Input() description!: string;
   @Input() isComplete!: boolean;
   @Output() taskUpdated = new EventEmitter<void>();
 
   constructor(private todoistService: TodoistService) {}
+
+  addTask(form: NgForm) {
+    this.todoistService.addTask(form.value).then(() => {
+      this.taskUpdated.emit();
+    });
+  }
 
   deleteTask(id: string) {
     this.todoistService.deleteTask(id).then(() => {

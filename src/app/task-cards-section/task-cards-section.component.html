@@ -1,9 +1,17 @@
 <section>
+  <button
+    type="button"
+    (click)="openTaskForm()"
+    class="margin-bottom-md"
+    nbButton
+  >
+    Add Task
+  </button>
   <app-task-card
     *ngFor="let task of tasks"
     (taskUpdated)="onTaskUpdated()"
     [id]="task.id"
-    [title]="task.content"
+    [content]="task.content"
     [description]="task.description"
     [isComplete]="task.isCompleted"
   ></app-task-card>

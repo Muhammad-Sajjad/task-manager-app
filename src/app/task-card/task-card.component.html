@@ -1,13 +1,13 @@
 <nb-card [accent]="isComplete === false ? 'warning' : 'info'">
-  <form (ngSubmit)="editTask(id, f)" #f="ngForm">
+  <form name="task-form" (ngSubmit)="editTask(id, f)" #f="ngForm">
     <nb-card-header class="card-header">
       <input
-        name="title"
+        name="content"
         type="text"
         fieldSize="small"
         placeholder="Title"
-        [defaultValue]="title"
-        [(ngModel)]="title"
+        [defaultValue]="content"
+        [(ngModel)]="content"
         class="title-area"
         maxlength="200"
         required
@@ -45,4 +45,9 @@
       ></textarea>
     </nb-card-body>
   </form>
+  <nb-card-footer *ngIf="isNewTask">
+    <button type="submit" form="task-form" (click)="addTask(f)" nbButton>
+      Submit
+    </button>
+  </nb-card-footer>
 </nb-card>

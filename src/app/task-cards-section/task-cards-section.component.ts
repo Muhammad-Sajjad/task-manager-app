@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TodoistService } from '../todoist.service';
 import { Task } from '@doist/todoist-api-typescript';
 import { ActivatedRoute } from '@angular/router';
+import { NbWindowService } from '@nebular/theme';
+import { TaskCardComponent } from '../task-card/task-card.component';
 
 @Component({
   selector: 'app-task-cards-section',
@@ -14,11 +16,19 @@ export class TaskCardsSectionComponent implements OnInit {
 
   constructor(
     private todoistService: TodoistService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private windowService: NbWindowService
   ) {}
 
   async onTaskUpdated() {
     this.tasks = await this.todoistService.getTasks();
+  }
+
+  openTaskForm() {
+    this.windowService.open(TaskCardComponent, {
+      title: `Create new Task`,
+      context: { isNewTask: true },
+    });
   }
 
   ngOnInit() {
