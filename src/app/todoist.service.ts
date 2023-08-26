@@ -26,9 +26,13 @@ export class TodoistService {
   deleteTask(taskId: string): Promise<boolean> {
     return this.api.deleteTask(taskId);
   }
+
+  closeTask(taskId: string): Promise<boolean> {
+    return this.api.closeTask(taskId);
+  }
 }
 
 export interface TaskInternal {
-  content: string;
+  content?: string;
   description?: string;
 }

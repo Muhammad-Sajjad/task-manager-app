@@ -14,11 +14,18 @@ export class TaskCardsSectionComponent implements OnInit {
 
   async onTaskDeleted() {
     this.tasks = await this.todoistService.getTasks();
-  }  
+  }
+
+  async onTaskUpdated() {
+    this.tasks = await this.todoistService.getTasks();
+  }
+
+  async onTaskClosed() {
+    this.tasks = await this.todoistService.getTasks();
+  }
 
   ngOnInit() {
-    this.todoistService.getTasks()
-    .then((task: Task[]) => {
+    this.todoistService.getTasks().then((task: Task[]) => {
       this.tasks = task;
     });
   }

@@ -1,17 +1,19 @@
-<nb-card [accent]="isComplete ? 'info' : 'danger'">
-  <form action="">
+<nb-card [accent]="isComplete ? 'info' : 'warning'">
+  <form (ngSubmit)="updateTask(id, f)" #f="ngForm">
     <nb-card-header class="card-header">
       <input
+        name="title"
         type="text"
         fieldSize="small"
         placeholder="Title"
         [defaultValue]="title"
+        [(ngModel)]="title"
         class="title-area"
         maxlength="200"
         required
       />
       <div class="action-items">
-        <button>
+        <button type="submit">
           <nb-icon icon="edit"></nb-icon>
         </button>
         <button class="margin-left-sm" (click)="deleteTask(id)">
@@ -21,9 +23,11 @@
     </nb-card-header>
     <nb-card-body>
       <textarea
+        name="description"
         placeholder="Description"
         class="description-area margin-top-sm"
         [defaultValue]="description"
+        [(ngModel)]="description"
       ></textarea>
     </nb-card-body>
   </form>

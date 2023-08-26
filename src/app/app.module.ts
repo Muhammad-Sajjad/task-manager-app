@@ -14,6 +14,7 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TaskCardsSectionComponent } from './task-cards-section/task-cards-section.component';
 import { TaskCardComponent } from './task-card/task-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, TaskCardsSectionComponent, TaskCardComponent],
@@ -27,6 +28,7 @@ import { TaskCardComponent } from './task-card/task-card.component';
     NbSidebarModule.forRoot(),
     NbCardModule,
     NbIconModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
